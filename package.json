@@ -1,0 +1,22 @@
+{
+  "name": "diario_anjinho_de_luz",
+  "version": "0.0.1",
+  "description": "Diário da escola Anjinho de Luz",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/elisomorovskimedeiros/Diario_Anjinho_de_Luz"
+  },
+  "author": "Eli Somorovski Medeiros",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-http-to-https": "^1.1.4",
+    "fs": "0.0.1-security",
+    "https": "^1.0.0",
+    "mongoose": "^5.7.6"
+  }
+}
