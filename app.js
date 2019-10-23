@@ -1,6 +1,8 @@
 const express = require("express"),
 fs = require("fs"),
 https = require("https"),
+http = require("http"),
+nodemon = require("nodemon"),
 redirectToHTTPS = require('express-http-to-https').redirectToHTTPS
 bodyParser = require("body-parser"),
 methodOverride = require("method-override"),
@@ -14,7 +16,7 @@ let app = express();
 credenciais = {key: privateKey, cert: certificate};
 
 // Redirecionamento HTTP to HTTPS,
-app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
+//app.use(redirectToHTTPS([/localhost:(\d{4})/], [], 301));
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(methodOverride("_method"));
 app.use(express.static("public"));
@@ -23,9 +25,15 @@ let router = require("./Controller/router");
 
 
 // your express configuration here
-var httpsServer = https.createServer(credenciais, app);
+//var httpsServer = https.createServer(credenciais, app);
+var httpServer = http.createServer(app);
 
+httpServer.listen(80, function () {
+    console.log("Tomando um chima pela porta " + 80);
+});
 
+/*
 httpsServer.listen(443, function () {
     console.log("Tomando um chima pela porta " + 443);
 });
+*/

@@ -1,1 +1,46 @@
-<h1>Olá!</h1>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name="description" content="Blog de atividades diárias da Escola Anjinho de Luz">
+    <meta content="pt-br" http-equiv="content-Language">
+    <title>Diário da Escola Anjinho de Luz</title>
+    <link rel="shortcut icon" href="imagens/icones/logo-128x128.png">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Meta tags para iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Weather PWA">
+    <link rel="apple-touch-icon" href="imagens/icones/logo-152x152.png">
+
+    <!-- meta theme-color -->
+    <meta name="theme-color" content="#2F3BA2" />
+
+    <!-- Referência ao manifesto de aplicativo web -->
+    <link rel="manifest" href="manifest.json">
+
+
+    <!--Configurações CSS-->
+    <link rel='stylesheet' type='text/css' media='screen' href='css/main.css'>
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+
+    <!--Configurações JavaScript-->
+    <script src='js/main.js'></script>
+</head>
+<body>
+    <h1>Olá</h1>
+
+    <!--REGISTRO DO SERVICE WORKER QUE PERMITE A PÁGINA ATUAR OFF LINE COMO SE FOSSE UM APLICATIVO-->
+    <script>
+        if('serviceWorker' in navigator){
+            window.addEventListener("load", () => {
+                navigator.serviceWorker.register("service-worker.js").then((reg)=> {
+                    console.log("Servide worker registrado", reg);
+                });
+            });
+        }
+    </script>
+</body>
+</html>
